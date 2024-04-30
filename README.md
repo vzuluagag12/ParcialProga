@@ -1,1 +1,47 @@
-# ParcialProga
+public interface Forma {
+    void dibujar();
+}
+
+public class Circulo implements Forma {
+    @Override
+    public void dibujar() {
+        System.out.println("Círculo dibujado");
+    }
+}
+
+public class Cuadrado implements Forma {
+    @Override
+    public void dibujar() {
+        System.out.println("Cuadrado dibujado");
+    }
+}
+
+
+public class Triangulo implements Forma {
+    @Override
+    public void dibujar() {
+        System.out.println("Triángulo dibujado");
+    }
+}
+
+
+public class Dibujador {
+    public void dibujarForma(Forma forma) {
+        forma.dibujar();
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Dibujador dibujador = new Dibujador();
+
+        Forma circulo = new Circulo();
+        Forma cuadrado = new Cuadrado();
+        Forma triangulo = new Triangulo();
+
+        dibujador.dibujarForma(circulo);
+        dibujador.dibujarForma(cuadrado);
+        dibujador.dibujarForma(triangulo);
+    }
+}
